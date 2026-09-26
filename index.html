@@ -1,0 +1,464 @@
+12<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saroverse | Official</title>
+<meta name="description" content="Official portfolio of Sarath R, an 8th standard student from Chennai interested in sports, music, reading, cricket, singing, gaming and lyrics.">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+:root{--bg:#fff8fc;--card:#fff;--text:#292238;--muted:#70687c;--border:#eee5f2;--pink:#ff4f9a;--purple:#7c4dff;--green:#00c9a7;--header:rgba(255,255,255,.9);--shadow:0 15px 40px rgba(80,40,100,.12)}
+body.dark{--bg:#15121d;--card:#211c2c;--text:#f7f2fa;--muted:#bdb4c8;--border:#372f42;--header:rgba(21,18,29,.94);--shadow:0 15px 40px rgba(0,0,0,.35)}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:.3s}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:var(--header);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+nav{width:min(1150px,92%);min-height:75px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:23px;font-weight:800}.logo span{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;margin-right:6px;border-radius:12px;color:white;background:linear-gradient(135deg,var(--pink),var(--purple))}
+.nav-links{display:flex;align-items:center;gap:20px}.nav-links a{font-size:14px;font-weight:600;color:var(--muted);transition:.25s}.nav-links a:hover{color:var(--pink)}
+.nav-buttons{display:flex;gap:8px}.theme-btn,.menu-btn{width:40px;height:40px;border:1px solid var(--border);border-radius:12px;background:var(--card);color:var(--text);cursor:pointer;font-size:18px}.menu-btn{display:none}
+
+.hero{width:min(1150px,92%);min-height:100vh;margin:auto;padding-top:100px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:50px}
+.welcome{color:var(--pink);font-size:13px;font-weight:800;letter-spacing:3px;margin-bottom:15px}
+.hero h1{font-size:clamp(45px,7vw,78px);line-height:1;margin-bottom:18px}.hero h1 span{background:linear-gradient(90deg,var(--pink),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h2{color:var(--purple);font-size:clamp(18px,3vw,26px);margin-bottom:18px}.hero-description{max-width:600px;color:var(--muted);font-size:17px}
+.hero-buttons{display:flex;gap:13px;margin-top:30px}.btn{padding:13px 22px;border-radius:12px;font-weight:700;transition:.25s}.primary{color:white;background:linear-gradient(135deg,var(--pink),var(--purple))}.secondary{color:var(--pink);border:2px solid var(--pink)}.btn:hover{transform:translateY(-3px)}
+.hero-photo{position:relative;display:flex;justify-content:center}.photo-frame{width:350px;height:430px;padding:9px;border-radius:40px;background:linear-gradient(135deg,var(--pink),var(--purple),var(--green));box-shadow:var(--shadow)}
+.photo-frame img{width:100%;height:100%;object-fit:cover;border-radius:32px;background:var(--card)}.photo-placeholder{width:100%;height:100%;display:none;align-items:center;justify-content:center;flex-direction:column;border-radius:32px;background:var(--card);color:var(--muted)}.photo-placeholder div{font-size:65px;margin-bottom:10px}
+.floating{position:absolute;width:60px;height:60px;display:flex;align-items:center;justify-content:center;border-radius:20px;background:var(--card);box-shadow:var(--shadow);font-size:27px;animation:floating 3s infinite ease-in-out}.float-one{left:3%;top:12%}.float-two{right:2%;top:30%;animation-delay:.6s}.float-three{left:10%;bottom:7%;animation-delay:1.1s}
+@keyframes floating{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+section{width:min(1150px,92%);margin:auto;padding:100px 0}.section-title{text-align:center;margin-bottom:50px}.section-title p{color:var(--pink);font-size:13px;font-weight:800;letter-spacing:3px;margin-bottom:8px}.section-title h2{font-size:clamp(32px,5vw,48px)}.section-title h2 span{color:var(--pink)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.card{padding:35px;border:1px solid var(--border);border-radius:25px;background:var(--card);box-shadow:var(--shadow)}.about-icon{font-size:42px;margin-bottom:15px}.card h3{font-size:27px;margin-bottom:12px}.card p{color:var(--muted);margin-bottom:12px}
+.detail{display:flex;align-items:center;gap:17px;padding:17px 0;border-bottom:1px solid var(--border)}.detail:last-child{border-bottom:none}.detail-icon{font-size:27px}.detail small{display:block;color:var(--muted);font-size:12px}.detail strong{display:block}
+.interest-section{width:100%;padding-left:4%;padding-right:4%;background:radial-gradient(circle at 10% 20%,rgba(255,79,154,.08),transparent 30%),radial-gradient(circle at 90% 80%,rgba(124,77,255,.08),transparent 30%)}
+.interest-grid{width:min(1150px,100%);margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.interest{padding:30px;text-align:center;border:1px solid var(--border);border-radius:24px;background:var(--card);box-shadow:var(--shadow);transition:.3s}.interest:hover{transform:translateY(-8px)}.interest-icon{font-size:43px;margin-bottom:10px}.interest h3{margin-bottom:6px}.interest p{color:var(--muted);font-size:14px}
+.skills{max-width:800px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:20px}.skill{padding:28px;border:1px solid var(--border);border-radius:22px;background:var(--card);box-shadow:var(--shadow)}.skill-title{display:flex;align-items:center;gap:12px;margin-bottom:10px}.skill-title span{font-size:30px}.skill small{color:var(--muted)}.progress{height:9px;margin-top:8px;overflow:hidden;border-radius:20px;background:var(--border)}.progress-bar{height:100%;width:45%;border-radius:20px;background:linear-gradient(90deg,var(--pink),var(--purple))}
+.achievement-section{width:100%;padding-left:4%;padding-right:4%;background:linear-gradient(135deg,rgba(255,79,154,.07),rgba(124,77,255,.07))}
+.achievements{width:min(900px,100%);margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:20px}.achievement{display:flex;gap:18px;padding:30px;border:1px solid var(--border);border-radius:23px;background:var(--card);box-shadow:var(--shadow)}.achievement-icon{min-width:58px;height:58px;display:flex;align-items:center;justify-content:center;border-radius:17px;background:rgba(255,79,154,.1);font-size:28px}.achievement p{color:var(--muted);font-size:14px}
+.certificate{max-width:850px;margin:auto;display:grid;grid-template-columns:1fr .8fr;gap:30px;padding:25px;border:1px solid var(--border);border-radius:25px;background:var(--card);box-shadow:var(--shadow)}.certificate-image{min-height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:18px;background:var(--bg)}.certificate-image img{width:100%;height:100%;object-fit:contain}.certificate-placeholder{text-align:center;color:var(--muted)}.certificate-placeholder span{display:block;font-size:60px}.certificate-info{display:flex;justify-content:center;flex-direction:column}.certificate-info h3{font-size:26px;margin-bottom:12px}.certificate-info p{color:var(--muted)}
+.projects{max-width:900px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:20px}.project{display:flex;gap:18px;padding:30px;border:1px solid var(--border);border-radius:23px;background:var(--card);box-shadow:var(--shadow)}.project-icon{min-width:60px;height:60px;display:flex;align-items:center;justify-content:center;border-radius:18px;background:rgba(0,201,167,.1);font-size:30px}.project p{color:var(--muted);font-size:14px;margin-bottom:10px}.tag{display:inline-block;padding:5px 10px;border-radius:20px;color:var(--purple);background:rgba(124,77,255,.1);font-size:11px;font-weight:700}
+.contact{text-align:center}.contact-card{max-width:650px;margin:auto;padding:45px 30px;border:1px solid var(--border);border-radius:28px;background:var(--card);box-shadow:var(--shadow)}.contact-icon{font-size:48px;margin-bottom:10px}.contact-card h3{font-size:28px;margin-bottom:10px}.contact-card p{color:var(--muted);margin-bottom:25px}.instagram{display:inline-block;padding:13px 23px;border-radius:12px;color:white;font-weight:700;background:linear-gradient(135deg,#ff4f9a,#7c4dff);transition:.25s}.instagram:hover{transform:translateY(-3px)}
+footer{padding:40px 20px;text-align:center;border-top:1px solid var(--border);background:var(--card)}.footer-logo{font-size:24px;font-weight:800;margin-bottom:8px}.footer-logo span{color:var(--pink)}footer p{color:var(--muted);font-size:14px}
+#topButton{position:fixed;right:20px;bottom:20px;width:45px;height:45px;border:none;border-radius:14px;color:white;background:linear-gradient(135deg,var(--pink),var(--purple));cursor:pointer;font-size:20px;opacity:0;visibility:hidden;transition:.3s;z-index:500}#topButton.show{opacity:1;visibility:visible}
+
+@media(max-width:900px){
+.nav-links{position:absolute;top:75px;left:4%;right:4%;display:none;flex-direction:column;padding:20px;border-radius:18px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow)}.nav-links.active{display:flex}.menu-btn{display:block}
+.hero{grid-template-columns:1fr;text-align:center;padding-top:120px}.hero-description{margin:auto}.hero-buttons{justify-content:center}.hero-photo{order:-1}.photo-frame{width:280px;height:340px}
+.about-grid,.achievements,.projects,.certificate{grid-template-columns:1fr}.interest-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+nav{min-height:68px}.logo{font-size:19px}.logo span{width:34px;height:34px}.hero h1{font-size:46px}.hero-buttons{flex-direction:column}.btn{width:100%}section{padding:75px 0}.interest-grid,.skills{grid-template-columns:1fr}.card,.skill,.achievement,.project{padding:24px}.certificate{padding:15px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<div class="logo"><span>S</span>Saroverse</div>
+
+<div class="nav-links" id="navLinks">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#interests">Interests</a>
+<a href="#achievements">Achievements</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div class="nav-buttons">
+<button class="theme-btn" id="themeButton">🌙</button>
+<button class="menu-btn" id="menuButton">☰</button>
+</div>
+</nav>
+</header>
+
+<section id="home" class="hero">
+
+<div>
+<p class="welcome">WELCOME TO MY WORLD</p>
+<h1>Hi, I'm <span>Sarath R</span></h1>
+<h2>Student • Sports • Music • Creativity</h2>
+
+<p class="hero-description">
+I'm interested in sports and music.
+I enjoy reading, cricket, singing, gaming
+and exploring creativity through words.
+</p>
+
+<div class="hero-buttons">
+<a href="#about" class="btn primary">Explore My World</a>
+<a href="#contact" class="btn secondary">Contact Me</a>
+</div>
+</div>
+
+<div class="hero-photo">
+<div class="photo-frame">
+
+<img src="sarath-photo.jpeg"
+alt="Sarath R"
+id="profilePhoto">
+
+<div class="photo-placeholder" id="photoPlaceholder">
+<div>📸</div>
+<p>Add Sarath's Photo</p>
+</div>
+
+</div>
+
+<div class="floating float-one">🏏</div>
+<div class="floating float-two">🎵</div>
+<div class="floating float-three">✍️</div>
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="section-title">
+<p>GET TO KNOW ME</p>
+<h2>About <span>Me</span></h2>
+</div>
+
+<div class="about-grid">
+
+<div class="card">
+<div class="about-icon">👋</div>
+<h3>Hello!</h3>
+
+<p>
+I'm <strong>Sarath R</strong>, an 8th standard
+student studying at Sathyaa Mat Hr Sec School
+in Chennai.
+</p>
+
+<p>
+I enjoy sports and music. My interests include
+reading, cricket, singing and gaming.
+</p>
+
+<p>
+I am also interested in becoming a lyricist
+and exploring creative ideas.
+</p>
+</div>
+
+<div class="card">
+
+<div class="detail">
+<span class="detail-icon">👨‍🎓</span>
+<div><small>Name</small><strong>Sarath R</strong></div>
+</div>
+
+<div class="detail">
+<span class="detail-icon">🏫</span>
+<div><small>School</small><strong>Sathyaa Mat Hr Sec School</strong></div>
+</div>
+
+<div class="detail">
+<span class="detail-icon">📚</span>
+<div><small>Class</small><strong>8th Standard</strong></div>
+</div>
+
+<div class="detail">
+<span class="detail-icon">📍</span>
+<div><small>City</small><strong>Chennai</strong></div>
+</div>
+
+<div class="detail">
+<span class="detail-icon">🎯</span>
+<div><small>Favourite Subject</small><strong>English</strong></div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="interests" class="interest-section">
+
+<div class="section-title">
+<p>WHAT I LOVE</p>
+<h2>My <span>Interests</span></h2>
+</div>
+
+<div class="interest-grid">
+
+<div class="interest">
+<div class="interest-icon">📚</div>
+<h3>Reading</h3>
+<p>Exploring stories and discovering new ideas.</p>
+</div>
+
+<div class="interest">
+<div class="interest-icon">🏏</div>
+<h3>Cricket</h3>
+<p>Enjoying cricket and sports.</p>
+</div>
+
+<div class="interest">
+<div class="interest-icon">🎤</div>
+<h3>Singing</h3>
+<p>Enjoying music and singing.</p>
+</div>
+
+<div class="interest">
+<div class="interest-icon">🎮</div>
+<h3>Gaming</h3>
+<p>Having fun with games during free time.</p>
+</div>
+
+<div class="interest">
+<div class="interest-icon">✍️</div>
+<h3>Lyricist</h3>
+<p>Interested in lyrics and creative writing.</p>
+</div>
+
+<div class="interest">
+<div class="interest-icon">🎵</div>
+<h3>Music</h3>
+<p>Music is one of my main interests.</p>
+</div>
+
+</div>
+</section>
+
+<section id="skills">
+
+<div class="section-title">
+<p>WHAT I CAN DO</p>
+<h2>My <span>Skills</span></h2>
+</div>
+
+<div class="skills">
+
+<div class="skill">
+<div class="skill-title">
+<span>🎤</span>
+<h3>Public Speaking</h3>
+</div>
+<small>Beginner</small>
+<div class="progress"><div class="progress-bar"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-title">
+<span>🏃</span>
+<h3>Sports</h3>
+</div>
+<small>Beginner</small>
+<div class="progress"><div class="progress-bar"></div></div>
+</div>
+
+</div>
+</section>
+
+<section id="achievements" class="achievement-section">
+
+<div class="section-title">
+<p>MOMENTS I'M PROUD OF</p>
+<h2>My <span>Achievements</span></h2>
+</div>
+
+<div class="achievements">
+
+<div class="achievement">
+<div class="achievement-icon">🏆</div>
+<div>
+<h3>Story Telling</h3>
+<p>Participated in storytelling and developed confidence in presenting stories.</p>
+</div>
+</div>
+
+<div class="achievement">
+<div class="achievement-icon">📜</div>
+<div>
+<h3>English Story Telling</h3>
+<p>Received a certificate for English Story telling.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section>
+
+<div class="section-title">
+<p>MY CERTIFICATE</p>
+<h2>Certificate <span>Showcase</span></h2>
+</div>
+
+<div class="certificate">
+
+<div class="certificate-image">
+
+<img src="engstotel-certificate.jpeg"
+alt="English Story Telling Certificate"
+id="certificateImage">
+
+<div class="certificate-placeholder" id="certificatePlaceholder">
+
+</div>
+
+</div>
+
+<div class="certificate-info">
+<h3>English Story Telling Certificate</h3>
+<p>A certificate received for participating in Thirukural telling.</p>
+</div>
+
+</div>
+</section>
+
+<section id="projects">
+
+<div class="section-title">
+<p>MY SCHOOL WORK</p>
+<h2>Projects & <span>Works</span></h2>
+</div>
+
+<div class="projects">
+
+<div class="project">
+<div class="project-icon">🔬</div>
+<div>
+<h3>School Project</h3>
+<p>A school project created as part of school learning and activities.</p>
+<span class="tag">School Project</span>
+</div>
+</div>
+
+<div class="project">
+<div class="project-icon">🎨</div>
+<div>
+<h3>Creative Works</h3>
+<p>A space for future creative work, lyrics, writing and other activities.</p>
+<span class="tag">Coming Soon</span>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="contact">
+
+<div class="section-title">
+<p>LET'S CONNECT</p>
+<h2>Contact <span>Me</span></h2>
+</div>
+
+<div class="contact-card">
+<div class="contact-icon">📱</div>
+<h3>Follow My Journey</h3>
+<p>Follow my creative journey and updates on Instagram.</p>
+
+<a href="https://www.instagram.com/mr_saro_verse/"
+target="_blank"
+rel="noopener noreferrer"
+class="instagram">
+📷 @mr_saro_verse
+</a>
+</div>
+</section>
+
+<footer>
+<div class="footer-logo">Saroverse<span>.</span></div>
+<p>© <span id="year"></span> Saroverse | Official</p>
+<p>Student • Sports • Music • Creativity</p>
+</footer>
+
+<button id="topButton">↑</button>
+
+<script>
+
+const menuButton=document.getElementById("menuButton");
+const navLinks=document.getElementById("navLinks");
+
+menuButton.addEventListener("click",function(){
+navLinks.classList.toggle("active");
+menuButton.textContent=navLinks.classList.contains("active")?"✕":"☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+link.addEventListener("click",function(){
+navLinks.classList.remove("active");
+menuButton.textContent="☰";
+});
+});
+
+const themeButton=document.getElementById("themeButton");
+const savedTheme=localStorage.getItem("saroverse-theme");
+
+if(savedTheme==="dark"){
+document.body.classList.add("dark");
+themeButton.textContent="☀️";
+}
+
+themeButton.addEventListener("click",function(){
+document.body.classList.toggle("dark");
+
+if(document.body.classList.contains("dark")){
+localStorage.setItem("saroverse-theme","dark");
+themeButton.textContent="☀️";
+}else{
+localStorage.setItem("saroverse-theme","light");
+themeButton.textContent="🌙";
+}
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+const topButton=document.getElementById("topButton");
+
+window.addEventListener("scroll",function(){
+if(window.scrollY>400){
+topButton.classList.add("show");
+}else{
+topButton.classList.remove("show");
+}
+});
+
+topButton.addEventListener("click",function(){
+window.scrollTo({top:0,behavior:"smooth"});
+});
+
+const profilePhoto=document.getElementById("profilePhoto");
+const photoPlaceholder=document.getElementById("photoPlaceholder");
+
+profilePhoto.addEventListener("error",function(){
+profilePhoto.style.display="none";
+photoPlaceholder.style.display="flex";
+});
+
+const certificateImage=document.getElementById("certificateImage");
+const certificatePlaceholder=document.getElementById("certificatePlaceholder");
+
+certificateImage.addEventListener("error",function(){
+certificateImage.style.display="none";
+certificatePlaceholder.style.display="block";
+});
+
+const cards=document.querySelectorAll(".interest,.skill,.achievement,.project");
+
+const observer=new IntersectionObserver(function(entries){
+entries.forEach(function(entry){
+if(entry.isIntersecting){
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0)";
+}
+});
+},{threshold:.1});
+
+cards.forEach(function(card){
+card.style.opacity="0";
+card.style.transform="translateY(20px)";
+card.style.transition="opacity .6s ease,transform .6s ease";
+observer.observe(card);
+});
+
+</script>
+
+</body>
+</html>
